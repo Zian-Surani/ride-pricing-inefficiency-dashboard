@@ -1,0 +1,59 @@
+Ride Pricing Inefficiency Analysis Dashboard
+
+Files included:
+- app.py -> Streamlit dashboard
+- analysis.py -> cleaning, feature engineering, aggregation, plots
+- data.csv -> real NYC Yellow Taxi sample dataset
+- taxi_zone_lookup.csv -> official NYC TLC zone names used in the UI
+- taxi_zone_centroids.csv -> zone centroid coordinates for the map view
+- requirements.txt -> Python dependencies
+- .venv -> local virtual environment
+
+What this project does:
+- Loads NYC Yellow Taxi trip data from CSV
+- Cleans invalid records
+- Creates surge and hour features
+- Creates date, weekday, weekend/weekday, and trip duration features
+- Compares observed surge vs demand-based expected surge
+- Detects pricing inefficiency and outliers
+- Shows multiple charts, rankings, exports, and a pickup-zone map in Streamlit
+
+How to run:
+1. Open terminal in this project folder.
+2. Create the virtual environment if needed:
+   python -m venv .venv
+3. Activate the virtual environment in PowerShell:
+   .\.venv\Scripts\Activate.ps1
+4. Install dependencies inside the virtual environment:
+   python -m pip install -r requirements.txt
+5. Start the dashboard:
+   python -m streamlit run app.py
+6. Open the local URL shown in the terminal, usually:
+   http://localhost:8501
+
+Quick rerun after the first setup:
+1. Open terminal in this project folder.
+2. Activate the virtual environment:
+   .\.venv\Scripts\Activate.ps1
+3. Run the app:
+   python -m streamlit run app.py
+
+Notes:
+- The bundled data.csv is a real sample from the official NYC Open Data Yellow Taxi dataset.
+- You can replace data.csv with a bigger NYC Yellow Taxi CSV file if you want more records.
+- You can also upload a CSV directly from the Streamlit sidebar.
+- If PowerShell blocks activation, run:
+  Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
+
+Expected dashboard sections:
+- Overview KPIs
+- Project explanation
+- Cleaning summary
+- Time and date analysis
+- Inefficiency detection
+- Distribution and outliers
+- Geo view, heatmap, and correlation
+- Ranking analysis
+- Downloads
+- Final interpretation
+- Processed data preview
